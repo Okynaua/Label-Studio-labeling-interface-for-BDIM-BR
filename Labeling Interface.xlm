@@ -1,0 +1,148 @@
+<View>
+  <!-- Cabeçalho com link bonito -->
+  <HyperText
+    name="image"
+    value="&lt;div style='margin:12px 0;padding:12px;background:#e8f5e9;border-left:4px solid #34a853;border-radius:4px;font-family:Arial;'&gt;
+      &lt;p style='margin:0 0 10px 0;'&gt;
+        &lt;b&gt;Imagem a ser descrita:&lt;/b&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+        Observe a imagem abaixo para fazer as descrições segundo as instruções:
+      &lt;/p&gt;
+      &lt;div style='text-align:center;margin:15px 0;'&gt;
+        &lt;img src='$imagem' style='max-width:350px;border-radius:6px;margin-bottom:10px;'/&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+        &lt;b&gt;História completa no Museu da Pessoa:&lt;/b&gt;&lt;br/&gt;
+        &lt;a href='$captioning' target='_blank' style='color:#4a90e2;font-weight:bold;'&gt; $captioning &lt;/a>
+      &lt;/p&gt;
+    &lt;/div&gt;"
+  />
+
+  <!-- Exercício 1 -->
+  <Header value="Exercício 1: Descrição curta até 10 palavras (~ 60 a 80 caracteres)"/>
+  <TextArea
+    name="caption_llm"
+    toName="image"
+    placeholder="Tente manter a descrição entre 60 e 80 caracteres..."
+    rows="2"
+    maxSubmissions="1"
+  />
+
+  <!-- Exercício 2 -->
+  <Header value="Exercício 2: Audiodescrição até 100 palavras (~ 600 a 800 caracteres)"/>
+  <TextArea
+    name="caption_audio"
+    toName="image"
+    placeholder="Tente manter a descrição entre 600 e 800 caracteres..."
+    rows="6"
+    maxSubmissions="1"
+  />
+
+  <!-- Exercício 3 -->
+  <Header value="Exercício 3: Metadados"/>
+
+  <!-- A) Materiais complementares utilizados -->
+  <Header value="A) Materiais complementares utilizados"/>
+  <TextArea
+    name="materiais_complementares"
+    toName="image"
+    placeholder="Outros materiais utilizados"
+    rows="2"
+    maxSubmissions="1"
+  />
+
+  <!-- B) Observáveis -->
+  <Header value="B) Metadados observáveis"/>
+  <TextArea
+    name="localizacao"
+    toName="image"
+    placeholder="Localização (nome, tipo, país)"
+    rows="1"
+    maxSubmissions="1"
+  />
+  <TextArea
+    name="ocupacao"
+    toName="image"
+    placeholder="Ocupação"
+    rows="1"
+    maxSubmissions="1"
+  />
+
+  <!-- C) Interpretativos -->
+  <Header value="C) Metadados interpretativos"/>
+  <TextArea
+    name="tema"
+    toName="image"
+    placeholder="Tema"
+    rows="1"
+    maxSubmissions="1"
+  />
+  <TextArea
+    name="intencionalidade"
+    toName="image"
+    placeholder="Intencionalidade"
+    rows="1"
+    maxSubmissions="1"
+  />
+  <TextArea
+    name="epistemologia"
+    toName="image"
+    placeholder="Epistemologia"
+    rows="1"
+    maxSubmissions="1"
+  />
+  <TextArea
+    name="emocao"
+    toName="image"
+    placeholder="Emoção/ânimo"
+    rows="1"
+    maxSubmissions="1"
+  />
+  <TextArea
+    name="confianca"
+    toName="image"
+    placeholder="Nível de confiança (alta, média, baixa)"
+    rows="1"
+    maxSubmissions="1"
+  />
+
+  <!-- D) Notas -->
+  <Header value="D) Notas técnicas"/>
+  <TextArea
+    name="notas"
+    toName="image"
+    placeholder="Insira dúvidas, incertezas ou observações adicionais sobre a imagem"
+    rows="3"
+    maxSubmissions="1"
+  />
+
+  <!-- Avaliação por outro participante -->
+  <Header value="Avaliação das anotações"/>
+  <HyperText
+    name="peer_review"
+    value="&lt;div style='margin:12px 0;padding:12px;background:#fff8e1;border-left:4px solid #f4b400;border-radius:4px;font-family:Arial;'&gt;
+      &lt;p style='margin:0;'&gt;
+        &lt;b&gt;Após a conclusão das anotações individuais,&lt;/b&gt; sua dupla deverá ler as respostas e avaliá-las.
+      &lt;/p&gt;
+      &lt;p&gt;
+        A avaliação deve verificar se as regras enunciadas na atividade foram seguidas e identificar aspectos relativos a:
+      &lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;(a) conhecimentos;&lt;/li&gt;
+        &lt;li&gt;(b) ontologias de anotação;&lt;/li&gt;
+        &lt;li&gt;(c) discursos;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;
+        Registre observações que possam contribuir para a discussão e o refinamento de nossas práticas de anotação.
+      &lt;/p&gt;
+    &lt;/div&gt;"
+  />
+  <TextArea
+    name="avaliacao_pares"
+    toName="image"
+    placeholder="Insira aqui a avaliação das anotações realizadas por outro participante."
+    rows="6"
+    maxSubmissions="1"
+  />
+</View>
