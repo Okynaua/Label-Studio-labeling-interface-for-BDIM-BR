@@ -1,148 +1,171 @@
-<View>
-  <!-- Cabeçalho com link bonito -->
-  <HyperText
-    name="image"
-    value="&lt;div style='margin:12px 0;padding:12px;background:#e8f5e9;border-left:4px solid #34a853;border-radius:4px;font-family:Arial;'&gt;
-      &lt;p style='margin:0 0 10px 0;'&gt;
-        &lt;b&gt;Imagem a ser descrita:&lt;/b&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        Observe a imagem abaixo para fazer as descrições segundo as instruções:
-      &lt;/p&gt;
-      &lt;div style='text-align:center;margin:15px 0;'&gt;
-        &lt;img src='$imagem' style='max-width:350px;border-radius:6px;margin-bottom:10px;'/&gt;
-      &lt;/div&gt;
-      &lt;p&gt;
-        &lt;b&gt;História completa no Museu da Pessoa:&lt;/b&gt;&lt;br/&gt;
-        &lt;a href='$captioning' target='_blank' style='color:#4a90e2;font-weight:bold;'&gt; $captioning &lt;/a>
-      &lt;/p&gt;
-    &lt;/div&gt;"
-  />
+<div>
 
-  <!-- Exercício 1 -->
-  <Header value="Exercício 1: Descrição curta até 10 palavras (~ 60 a 80 caracteres)"/>
-  <TextArea
-    name="caption_llm"
-    toName="image"
-    placeholder="Tente manter a descrição entre 60 e 80 caracteres..."
-    rows="2"
-    maxSubmissions="1"
-  />
+  <h2>BDIM-BR - Atividade de Descrição</h2>
 
-  <!-- Exercício 2 -->
-  <Header value="Exercício 2: Audiodescrição até 100 palavras (~ 600 a 800 caracteres)"/>
-  <TextArea
-    name="caption_audio"
-    toName="image"
-    placeholder="Tente manter a descrição entre 600 e 800 caracteres..."
-    rows="6"
-    maxSubmissions="1"
-  />
+<br>
 
-  <!-- Exercício 3 -->
-  <Header value="Exercício 3: Metadados"/>
+  <p>
+    Esta atividade faz parte do projeto de criação do Banco de Dados de Imagens de Pessoas e Metadados em Português Brasileiro (BDIM-BR),
+    do Grupo de Pesquisa sobre Linguagem Humana e Inteligência Artificial da UNICAMP.
+  </p>
+<br>
+  <p>
+    Em duplas, cada participante realizará anotações individuais de dados de uma mesma coleção e, posteriormente, avaliará as anotações do seu par.
+    A atividade busca analisar aspectos relacionados aos conhecimentos, ontologias de anotação e discursos envolvidos na descrição dos dados.
+  </p>
+<br>
+  <p>
+    Os dados podem incluir diferentes formatos, como fotografias, imagens, vídeos, áudios, transcrições e outros materiais complementares.
+    Registre também quais materiais adicionais foram consultados durante a anotação.
+  </p>
+<br>
+  <p>
+    As instruções específicas de cada etapa serão apresentadas nos exercícios a seguir.
+  </p>
+<br>
+  <hr>
+<br>
+  <h3>Exercício 1: Atributos visíveis para anotação em formato LLM</h3>
 
-  <!-- A) Materiais complementares utilizados -->
-  <Header value="A) Materiais complementares utilizados"/>
-  <TextArea
-    name="materiais_complementares"
-    toName="image"
-    placeholder="Outros materiais utilizados"
-    rows="2"
-    maxSubmissions="1"
-  />
+  <p><b>Escreva uma descrição de 10 palavras para a imagem.</b></p>
+<br>
+  <p><b>Orientações:</b></p>
 
-  <!-- B) Observáveis -->
-  <Header value="B) Metadados observáveis"/>
-  <TextArea
-    name="localizacao"
-    toName="image"
-    placeholder="Localização (nome, tipo, país)"
-    rows="1"
-    maxSubmissions="1"
-  />
-  <TextArea
-    name="ocupacao"
-    toName="image"
-    placeholder="Ocupação"
-    rows="1"
-    maxSubmissions="1"
-  />
+  <ul>
+    <li>A descrição deve seguir a ordem da esquerda para a direita e de cima para baixo, priorizando o primeiro plano.</li>
+    <li>A pessoa deve aparecer primeiro, seguida de um verbo de ação no gerúndio (ex.: <i>pessoa correndo</i>).</li>
+    <li>Inclua aspectos físicos que particularizem a pessoa e/ou seus trajes (peças superiores antes das inferiores e acessórios, se relevantes).</li>
+    <li>O contexto (local, cenário e situação) pode ser descrito ao final.</li>
+  </ul>
 
-  <!-- C) Interpretativos -->
-  <Header value="C) Metadados interpretativos"/>
-  <TextArea
-    name="tema"
-    toName="image"
-    placeholder="Tema"
-    rows="1"
-    maxSubmissions="1"
-  />
-  <TextArea
-    name="intencionalidade"
-    toName="image"
-    placeholder="Intencionalidade"
-    rows="1"
-    maxSubmissions="1"
-  />
-  <TextArea
-    name="epistemologia"
-    toName="image"
-    placeholder="Epistemologia"
-    rows="1"
-    maxSubmissions="1"
-  />
-  <TextArea
-    name="emocao"
-    toName="image"
-    placeholder="Emoção/ânimo"
-    rows="1"
-    maxSubmissions="1"
-  />
-  <TextArea
-    name="confianca"
-    toName="image"
-    placeholder="Nível de confiança (alta, média, baixa)"
-    rows="1"
-    maxSubmissions="1"
-  />
+  <p><b>Restrições:</b></p>
+<br>
+  <ul>
+    <li>Sexo, gênero e raça somente devem ser informados se houver explicitação pela própria pessoa no depoimento.</li>
+    <li>Na ausência dessas informações, utilize apenas o termo <b>pessoa</b>.</li>
+    <li>O nome deve ser utilizado apenas quando se tratar de figura pública.</li>
+    <li>A faixa etária pode ser informada quando estiver presente no depoimento ou for relevante para a cena (criança, jovem, pessoa adulta ou idosa).</li>
+    <li>Não informar cor de pele.</li>
+    <li>Etnia apenas quando explicitada no depoimento.</li>
+  </ul>
+<br>
+  <p><b>Evite:</b></p>
 
-  <!-- D) Notas -->
-  <Header value="D) Notas técnicas"/>
-  <TextArea
-    name="notas"
-    toName="image"
-    placeholder="Insira dúvidas, incertezas ou observações adicionais sobre a imagem"
-    rows="3"
-    maxSubmissions="1"
-  />
+  <ul>
+    <li>Informações baseadas em deduções ou inferências não confirmadas pela imagem ou pelo depoimento.</li>
+    <li>Palavras ruidosas, como <i>"na imagem"</i>, <i>"vemos"</i> e <i>"uma"</i>.</li>
+  </ul>
 
-  <!-- Avaliação por outro participante -->
-  <Header value="Avaliação das anotações"/>
-  <HyperText
-    name="peer_review"
-    value="&lt;div style='margin:12px 0;padding:12px;background:#fff8e1;border-left:4px solid #f4b400;border-radius:4px;font-family:Arial;'&gt;
-      &lt;p style='margin:0;'&gt;
-        &lt;b&gt;Após a conclusão das anotações individuais,&lt;/b&gt; sua dupla deverá ler as respostas e avaliá-las.
-      &lt;/p&gt;
-      &lt;p&gt;
-        A avaliação deve verificar se as regras enunciadas na atividade foram seguidas e identificar aspectos relativos a:
-      &lt;/p&gt;
-      &lt;ul&gt;
-        &lt;li&gt;(a) conhecimentos;&lt;/li&gt;
-        &lt;li&gt;(b) ontologias de anotação;&lt;/li&gt;
-        &lt;li&gt;(c) discursos;&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;
-        Registre observações que possam contribuir para a discussão e o refinamento de nossas práticas de anotação.
-      &lt;/p&gt;
-    &lt;/div&gt;"
-  />
-  <TextArea
-    name="avaliacao_pares"
-    toName="image"
-    placeholder="Insira aqui a avaliação das anotações realizadas por outro participante."
-    rows="6"
-    maxSubmissions="1"
-  />
-</View>
+<br>
+
+  <hr>
+<br>
+  <h3>Exercício 2: Audiodescrição</h3>
+
+  <p><b>Escreva uma descrição de até 100 palavras para a imagem.</b></p>
+<br>
+  <p><b>Orientações:</b></p>
+
+  <ul>
+    <li>Inicie indicando o tipo de material, seguido de ponto final. Ex.: <i>Fotografia.</i> <i>Desenho.</i></li>
+    <li>A descrição deve seguir a ordem da esquerda para a direita e de cima para baixo, priorizando o primeiro plano.</li>
+    <li>A pessoa deve aparecer primeiro, seguida de um verbo de ação no gerúndio.</li>
+    <li>Inclua aspectos físicos que particularizem a pessoa e/ou seus trajes (peças superiores antes das inferiores e acessórios, se relevantes).</li>
+    <li>O contexto (local, cenário e situação) pode ser descrito ao final.</li>
+  </ul>
+<br>
+  <p><b>Restrições:</b></p>
+
+  <ul>
+    <li>Sexo, gênero e raça somente devem ser informados se houver explicitação pela própria pessoa no depoimento.</li>
+    <li>Na ausência dessas informações, utilize apenas o termo <b>pessoa</b>.</li>
+    <li>O nome deve ser utilizado apenas quando se tratar de figura pública.</li>
+    <li>A faixa etária pode ser informada quando estiver presente no depoimento ou for relevante para a cena (criança, jovem, pessoa adulta ou idosa).</li>
+    <li>Não informar cor de pele.</li>
+    <li>Etnia apenas quando explicitada no depoimento.</li>
+  </ul>
+<br>
+  <p><b>Evite:</b></p>
+
+  <ul>
+    <li>Informações baseadas em deduções ou inferências não confirmadas pela imagem ou pelo depoimento.</li>
+    <li>Palavras ruidosas, como <i>"na imagem"</i>, <i>"vemos"</i> e <i>"uma"</i>.</li>
+  </ul>
+<br>
+  <p><b>Exemplo:</b></p>
+
+  <p>
+    <i>
+      Fotografia. À esquerda, professora adulta de cabelos claros aponta um globo terrestre sobre a mesa.
+      Ao lado direito, próximo à professora, um menino observa o globo.
+      À direita, quatro crianças sentadas próximas à mesa observam.
+      Ao fundo, quadro verde.
+    </i>
+  </p>
+<br>
+
+  <hr>
+<br>
+  <h3>Exercício 3: Metadados contextuais e discursivos</h3>
+<br>
+  <h4>A) Materiais complementares utilizados</h4>
+
+  <p>
+    Registre quais materiais complementares à imagem foram consultados para realizar a anotação.
+  </p>
+
+  <p><b>Exemplos:</b></p>
+
+  <ul>
+    <li>Transcrição da entrevista em texto;</li>
+    <li>Vídeo com depoimento da pessoa retratada;</li>
+    <li>Áudio da história de vida;</li>
+    <li>Informações disponíveis na página da história.</li>
+  </ul>
+<br>
+  <h4>B) Metadados observáveis</h4>
+
+  <p><b>Localização:</b> incluir nome, tipo (cidade, estado, região, país etc.) e país (Brasil).</p>
+
+  <p><b>Ocupação:</b> profissão da pessoa (ex.: artista, agricultora, professora).</p>
+<br>
+  <h4>C) Metadados interpretativos</h4>
+
+  <p><b>Tema:</b> ex.: direitos indígenas, trabalho, empreendedorismo, desigualdade, identidade, território, educação, saúde, profissão, alimentação etc.</p>
+
+  <p><b>Intencionalidade:</b> ex.: protesto, reivindicação política, celebração identitária, conquista, sucesso, afirmação cultural, organização comunitária, preservação cultural etc.</p>
+
+  <p><b>Epistemologia:</b> ex.: indígena, feminista, decolonial, movimento de resistência, anticolonial etc.</p>
+
+  <p><b>Emoção/ânimo:</b> ex.: feliz, triste, orgulhosa.</p>
+
+  <p><b>Nível de confiança:</b> alta, média ou baixa.</p>
+<br>
+  <h4>D) Notas técnicas do anotante</h4>
+
+  <p>
+    Utilize este campo para registrar dúvidas, incertezas ou observações adicionais sobre a imagem.
+  </p>
+
+  <p><b>Exemplos:</b></p>
+
+  <ul>
+    <li>A cena parece um momento de tensão ou conflito.</li>
+    <li>Parece uma feira.</li>
+    <li>Pode ser uma comunidade quilombola.</li>
+  </ul>
+<br>
+ <hr>
+<br>
+<h3>Exercício 4: Descrição livre</h3>
+<br>
+<p><b>Escreva uma descrição livre de até 100 palavras para a imagem.</b></p>
+
+<p>
+  Diferentemente dos exercícios anteriores, esta descrição não precisa seguir um formato
+  específico. Descreva a imagem da maneira que considerar mais adequada,
+  priorizando os elementos que julgar mais relevantes para compreender seu conteúdo.
+</p>
+
+  
+</div>
